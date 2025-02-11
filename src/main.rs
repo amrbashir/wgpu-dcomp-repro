@@ -312,7 +312,12 @@ impl SurfaceState {
                 view: &texture_view,
                 resolve_target: None,
                 ops: wgpu::Operations {
-                    load: wgpu::LoadOp::Clear(wgpu::Color::TRANSPARENT),
+                    load: wgpu::LoadOp::Clear(wgpu::Color {
+                        r: 1.,
+                        g: 0.,
+                        b: 0.,
+                        a: 0.5,
+                    }),
                     store: wgpu::StoreOp::Store,
                 },
             })],
